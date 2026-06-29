@@ -1,12 +1,7 @@
-{% comment %} {%extends 'navbar.html'%} {% endcomment %}
-{%load static%}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Swiper Slider</title>
+{%extends 'clothes/navbar.html'%}
 
+    {%block title%}Thrift Store{%endblock%}
+    {%block csslink%}
     <!--Font awesome CDN-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
@@ -15,11 +10,11 @@
 
     <!--Custom CSS-->
     <link rel="stylesheet" href="{%static 'clothes/backup.css'%}">
+    {%endblock%}
 
 
-</head>
-<body>
-    
+{%block body%}
+    {%load static%}
     <!-- Swiper -->
   <div class="swiper mySwiper">
     <div class="swiper-bg"></div>
@@ -246,12 +241,11 @@
     <!-- <div class="swiper-pagination"></div> -->
   </div>
 
-
-
+  {%block js%}
   <!-- Swiper JS -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-    <!--Swiper.js-->
-    <script src="{%static 'clothes/app.js'%}"></script>
-</body>
-</html>
+  
+  <!--Swiper.js-->
+  <script src="{%static 'clothes/app.js'%}"></script>
+  {%endblock%}
+{%endblock%}

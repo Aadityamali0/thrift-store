@@ -4,31 +4,35 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>{%block title%}{%endblock%}</title>
+    {%block csslink%}{%endblock%}
     <style>
+      {%block css%}
       .bgclr{
         background-color: #f3e3d6;
       }
       .nav-item a:hover{
         color: #070607;
-        text-decoration: underline pink 2px;
+        text-decoration: underline #e6c8ae 2px;
       }
     </style>
+      {%endblock%}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
   </head>
   <body>
     {% load static %}
-<nav class="navbar navbar-expand-lg p-0 bgclr">
-  <div class="container-fluid d-flex align-items-center justify-content-between">
-    
+    <nav class="navbar navbar-expand-lg p-0 bgclr">
+      <div class="container-fluid d-flex align-items-center justify-content-between">
+        
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-
+    
     <span class="navbar-text p-0 order-lg-last"> 
-      <video style="height: 65px; width: auto; display: block;" autoplay muted loop playsinline>
+      <a href="#"><video style="height: 65px; width: auto; display: block;" autoplay muted loop playsinline>
         <source src="{% static 'clothes/logo.mp4' %}" type="video/mp4">
       </video>
+    </a>
     </span>
 
     <div class="collapse navbar-collapse" id="navbarText">
@@ -44,9 +48,12 @@
         </li>
       </ul>
     </div>
-
+    
   </div>
 </nav>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+{%block body%}
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+{%block js%}{%endblock%}
+{%endblock%}
   </body>
 </html>
